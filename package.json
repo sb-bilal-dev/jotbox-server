@@ -17,9 +17,7 @@
     "dotenv": "^8.6.0",
     "graphql": "^15.5.1",
     "mongoose": "^5.13.5",
-    "ts-node": "^9.1.1"
-  },
-  "devDependencies": {
+    "ts-node": "^9.1.1",
     "@graphql-codegen/cli": "1.21.7",
     "@graphql-codegen/introspection": "1.18.2",
     "@graphql-codegen/typescript": "1.23.0",
