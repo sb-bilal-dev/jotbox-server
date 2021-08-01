@@ -13,7 +13,10 @@ config();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  introspection: true
+  introspection: true,
+  plugins: [
+    ApolloServerPluginLandingPageGraphQLPlayground()
+  ]
 });
 
 db.on("error", console.error.bind(console, "connection error:"));
@@ -21,11 +24,12 @@ db.once("open", function() {
   // were connected!
   console.log("✔️ Connected to MongoDB ✔️");
 
-  server
-    .listen({
-      port: process.env.PORT || 4000
-    })
-    .then(({ url }) => {
-      console.log(`Server started at ${url}`);
-    });
 });
+
+server
+  .listen({
+    port: process.env.PORT || 4000
+  })
+  .then(({ url }) => {
+    console.log(`Server started at ${url}`);
+  });
